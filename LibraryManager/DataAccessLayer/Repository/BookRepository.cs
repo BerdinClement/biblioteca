@@ -16,7 +16,7 @@ public class BookRepository
         return books;
     }
 
-    public Book Get(int id)
+    public Book? Get(int id)
     {
         return books.Find(book => book.Id == id);
     }

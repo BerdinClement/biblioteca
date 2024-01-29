@@ -16,7 +16,7 @@ public class AuthorRepository
         return Authors;
     }
 
-    public Author Get(int id)
+    public Author? Get(int id)
     {
         return Authors.Find(Author => Author.Id == id);
     }
