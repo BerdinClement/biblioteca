@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Services.Services
 {
-    public class CatalogService
+    public class CatalogService : ICatalogService
     {
         private readonly ICatalogManager _catalogManager;
         
