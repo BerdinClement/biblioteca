@@ -1,5 +1,6 @@
 ﻿using BusinessObjects.Entity;
 using BusinessLayer.Catalog;
+using System.Linq;
 
 namespace Services.Services
 {
@@ -13,13 +14,18 @@ namespace Services.Services
         }
 
         public IEnumerable<Book> ShowCatalog(BookTypes type)
-        {
+        { 
             return _catalogManager.DisplayCatalog(type);
         }
 
         public Book? FindBook(int id)
         {
             return _catalogManager.FindBook(id);
+        }
+
+        public IEnumerable<Book> ShowFantasyBooks()
+        {
+            return _catalogManager.DisplayFantasyBooks();
         }
     }
 }

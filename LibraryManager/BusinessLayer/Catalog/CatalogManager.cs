@@ -1,5 +1,5 @@
 using BusinessObjects.Entity;
-
+using System.Linq;
 namespace BusinessLayer.Catalog;
 
 public class CatalogManager
@@ -19,5 +19,10 @@ public class CatalogManager
     public Book? FindBook(int id)
     {
         return _bookRepository.Get(id);
+    }
+
+    public IEnumerable<Book> DisplayFantasyBooks()
+    {
+        return _bookRepository.GetAll().Where(book => book.Type == BookTypes.Fantasy);
     }
 }
