@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using BusinessObjects.Entity;
+﻿using BusinessObjects.Entity;
+using DataAccessLayer.Repository;
 
 
-public class BookRepository
+public class BookRepository : IGenericRepository<Book>
 {
     private List<Book> _books;
 

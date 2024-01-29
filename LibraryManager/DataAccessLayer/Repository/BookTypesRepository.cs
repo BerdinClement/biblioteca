@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using BusinessObjects.Entity;
+﻿using BusinessObjects.Entity;
 
 public class BookTypesRepository
 {

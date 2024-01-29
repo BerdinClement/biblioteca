@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using BusinessObjects.Entity;
+﻿using BusinessObjects.Entity;
+using DataAccessLayer.Repository;
 
 
-public class AuthorRepository
+public class AuthorRepository : IGenericRepository<Author>
 {
     private List<Author> _authors ;
 
