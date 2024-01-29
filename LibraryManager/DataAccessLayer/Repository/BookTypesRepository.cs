@@ -3,16 +3,16 @@ using BusinessObjects.Entity;
 
 public class BookTypesRepository
 {
-    private List<BookTypes> bookTypes;
+    private List<BookTypes> _bookTypes;
 
     public BookTypesRepository()
     {
-        bookTypes = new List<BookTypes>();
+        _bookTypes = new List<BookTypes>();
     }
 
     public IEnumerable<BookTypes> GetAll()
     {
-        return bookTypes;
+        return _bookTypes;
     }
 
 

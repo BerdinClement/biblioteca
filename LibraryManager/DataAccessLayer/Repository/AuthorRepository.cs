@@ -4,20 +4,25 @@ using BusinessObjects.Entity;
 
 public class AuthorRepository
 {
-    private List<Author> Authors;
+    private List<Author> _authors ;
 
     public AuthorRepository()
     {
-        Authors = new List<Author>();
+        _authors = new List<Author>();
+    }
+    
+    public AuthorRepository(List<Author> authors)
+    {
+        _authors = authors;
     }
 
     public IEnumerable<Author> GetAll()
     {
-        return Authors;
+        return _authors;
     }
 
     public Author? Get(int id)
     {
-        return Authors.Find(Author => Author.Id == id);
+        return _authors.Find(author => author.Id == id);
     }
 }

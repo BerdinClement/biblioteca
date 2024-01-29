@@ -4,20 +4,25 @@ using BusinessObjects.Entity;
 
 public class LibraryRepository
 {
-    private List<Library> Librarys;
+    private List<Library> _libraries;
 
     public LibraryRepository()
     {
-        Librarys = new List<Library>();
+        _libraries = new List<Library>();
+    }
+    
+    public LibraryRepository(List<Library> libraries)
+    {
+        _libraries = libraries;
     }
 
     public IEnumerable<Library> GetAll()
     {
-        return Librarys;
+        return _libraries;
     }
 
     public Library? Get(int id)
     {
-        return Librarys.Find(Library => Library.Id == id);
+        return _libraries.Find(library => library.Id == id);
     }
 }

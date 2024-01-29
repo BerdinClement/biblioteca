@@ -4,20 +4,25 @@ using BusinessObjects.Entity;
 
 public class BookRepository
 {
-    private List<Book> books;
+    private List<Book> _books;
 
     public BookRepository()
     {  
-        books = new List<Book>();
+        _books = new List<Book>();
+    }
+
+    public BookRepository(List<Book> books)
+    {
+        _books = books;
     }
 
     public IEnumerable<Book> GetAll()
     {
-        return books;
+        return _books;
     }
 
     public Book? Get(int id)
     {
-        return books.Find(book => book.Id == id);
+        return _books.Find(book => book.Id == id);
     }
 }
