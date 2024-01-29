@@ -22,7 +22,12 @@ namespace Services.Services
         {
             return _catalogManager.FindBook(id);
         }
-
+        
+        public Book GetBestRatedBook()
+        {
+            return _catalogManager.GetBestRatedBook();
+        }   
+        
         public IEnumerable<Book> ShowFantasyBooks()
         {
             return _catalogManager.DisplayFantasyBooks();

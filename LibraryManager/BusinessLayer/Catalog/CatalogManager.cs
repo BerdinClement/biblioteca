@@ -21,6 +21,11 @@ public class CatalogManager
         return _bookRepository.Get(id);
     }
 
+    public Book GetBestRatedBook()
+    {
+        return _bookRepository.GetAll().OrderByDescending(book => book.Rate).First();
+    }
+    
     public IEnumerable<Book> DisplayFantasyBooks()
     {
         return _bookRepository.GetAll().Where(book => book.Type == BookTypes.Fantasy);

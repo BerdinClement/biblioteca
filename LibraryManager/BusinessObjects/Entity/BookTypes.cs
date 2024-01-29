@@ -5,5 +5,6 @@ public enum BookTypes
     Adventure,
     Enseignement,
     Histoire,
-    Juridique
+    Juridique,
+    Fantasy,
 }
