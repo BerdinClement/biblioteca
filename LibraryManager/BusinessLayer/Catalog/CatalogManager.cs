@@ -2,7 +2,7 @@ using BusinessObjects.Entity;
 using System.Linq;
 namespace BusinessLayer.Catalog;
 
-public class CatalogManager
+public class CatalogManager : ICatalogManager
 {
     private readonly BookRepository _bookRepository = new BookRepository();
     
