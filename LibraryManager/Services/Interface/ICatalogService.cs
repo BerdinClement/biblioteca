@@ -2,7 +2,7 @@ using BusinessObjects.Entity;
 
 namespace Services.Services;
 
-public interface IServices
+public interface ICatalogService
 {
     public IEnumerable<Book> ShowCatalog();
     public IEnumerable<Book> ShowCatalog(BookTypes type);
