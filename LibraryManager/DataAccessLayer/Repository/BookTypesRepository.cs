@@ -1,5 +1,5 @@
 ﻿using BusinessObjects.Entity;
-
+[Obsolete]
 public class BookTypesRepository
 {
     private List<BookTypes> _bookTypes;
