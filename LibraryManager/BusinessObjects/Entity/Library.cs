@@ -2,8 +2,8 @@ namespace BusinessObjects.Entity;
 
 public class Library
 {
-    private int Id { get; set; }
-    private string? Name { get; set; }
-    private string? Address { get; set; }
-    private IEnumerable<Book>? Books { get; set; }
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public string? Address { get; set; }
+    public IEnumerable<Book>? Books { get; set; }
 }
