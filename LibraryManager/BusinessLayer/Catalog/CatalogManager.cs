@@ -1,10 +1,17 @@
 using BusinessObjects.Entity;
 using System.Linq;
+using DataAccessLayer.Repository;
+
 namespace BusinessLayer.Catalog;
 
 public class CatalogManager : ICatalogManager
 {
-    private readonly BookRepository _bookRepository = new BookRepository();
+    private readonly IGenericRepository<Book> _bookRepository;
+    
+    public CatalogManager(IGenericRepository<Book> bookRepository)
+    {
+        _bookRepository = bookRepository;
+    }
     
     public IEnumerable<Book> DisplayCatalog()
     {
