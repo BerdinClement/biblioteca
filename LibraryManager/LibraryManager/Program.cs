@@ -34,7 +34,7 @@ internal class Program
                 services.AddScoped<IGenericRepository<Library>, LibraryRepository>();
                 
                 services.AddDbContext<LibraryContext>(options => 
-                    options.UseSqlite("Data Source={path};")
+                    options.UseSqlite("Data Source={../ressources/library.db};")
                 );
             })
             .Build();
