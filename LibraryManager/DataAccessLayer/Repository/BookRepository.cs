@@ -1,28 +1,24 @@
 ﻿using BusinessObjects.Entity;
+using DataAccessLayer.Contexts;
 using DataAccessLayer.Repository;
 
 
 public class BookRepository : IGenericRepository<Book>
 {
-    private List<Book> _books;
+    private readonly LibraryContext _libraryContext;
 
-    public BookRepository()
-    {  
-        _books = new List<Book>();
-    }
-
-    public BookRepository(List<Book> books)
+    public BookRepository(LibraryContext libraryContext)
     {
-        _books = books;
+        _libraryContext = libraryContext;
     }
 
     public IEnumerable<Book> GetAll()
     {
-        return _books;
+        return _libraryContext.Books.ToList();
     }
 
     public Book? Get(int id)
     {
-        return _books.Find(book => book.Id == id);
+        return _libraryContext.Books.ToList().Find(book => book.Id == id);
     }
 }
