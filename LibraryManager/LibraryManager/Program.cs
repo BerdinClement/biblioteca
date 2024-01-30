@@ -1,7 +1,9 @@
 ﻿using System.Runtime.CompilerServices;
 using BusinessLayer.Catalog;
 using BusinessObjects.Entity;
+using DataAccessLayer.Contexts;
 using DataAccessLayer.Repository;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -30,6 +32,10 @@ internal class Program
                 services.AddScoped<IGenericRepository<Author>, AuthorRepository>();
                 services.AddScoped<IGenericRepository<Book>, BookRepository>();
                 services.AddScoped<IGenericRepository<Library>, LibraryRepository>();
+                
+                services.AddDbContext<LibraryContext>(options => 
+                    options.UseSqlite("Data Source={path};")
+                );
             })
             .Build();
     }
