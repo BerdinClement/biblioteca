@@ -37,5 +37,20 @@ namespace Services.Services
         {
             return _catalogManager.DisplayFantasyBooks();
         }
+
+        public Book GetBookById(int id)
+        {
+            return _catalogManager.GetBookById(id);
+        }
+
+        public IEnumerable<Book> GetBooksByType(string type)
+        {
+            return _catalogManager.GetBooksByType(type);
+        }
+
+        public Book GetTopRatedBook()
+        {
+            return _catalogManager.GetTopRatedBook();
+        }
     }
 }

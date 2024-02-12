@@ -36,4 +36,24 @@ public class CatalogManager : ICatalogManager
     {
         return _bookRepository.GetAll().Where(book => book.Type == BookTypes.Fantasy);
     }
+
+    public IEnumerable<Book> ShowCatalog()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Book GetBookById(int id)
+    {
+        return _bookRepository.Get(id);
+    }
+
+    public IEnumerable<Book> GetBooksByType(string type)
+    {
+        return _bookRepository.GetAll().Where(book => book.Type == BookTypes.Fantasy);
+    }
+
+    public Book GetTopRatedBook()
+    {
+        throw new NotImplementedException();
+    }
 }

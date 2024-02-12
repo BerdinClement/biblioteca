@@ -9,4 +9,8 @@ public interface ICatalogManager
     public Book? FindBook(int id);
     public Book GetBestRatedBook();
     public IEnumerable<Book> DisplayFantasyBooks();
+    public IEnumerable<Book> ShowCatalog();
+    public Book GetBookById(int id);
+    public IEnumerable<Book> GetBooksByType(string type);
+    public Book GetTopRatedBook();
 }

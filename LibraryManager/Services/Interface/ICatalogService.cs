@@ -9,4 +9,7 @@ public interface ICatalogService
     public Book? FindBook(int id);
     public Book GetBestRatedBook();
     public IEnumerable<Book> ShowFantasyBooks();
+    public Book GetBookById(int id);
+    public IEnumerable<Book> GetBooksByType(string type);
+    public Book GetTopRatedBook();
 }
