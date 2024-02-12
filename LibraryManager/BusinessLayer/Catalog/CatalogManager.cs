@@ -49,10 +49,9 @@ public class CatalogManager : ICatalogManager
 
     public IEnumerable<Book> GetBooksByType(string type)
     {
-        return _bookRepository.GetAll()
-                              .OrderByDescending(book => book.Type);
+        return _bookRepository.GetType(GetBooksByType(type));
+                              
     }
-
     public Book GetTopRatedBook()
     {
         throw new NotImplementedException();
