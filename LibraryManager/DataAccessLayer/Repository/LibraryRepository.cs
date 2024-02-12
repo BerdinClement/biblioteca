@@ -17,7 +17,7 @@ public class LibraryRepository : IGenericRepository<Library>
         return _libraryContext.Libraries.ToList();
     }
 
-    public Library Get(int id)
+    public Library? Get(int id)
     {
         return _libraryContext.Libraries.ToList().Find(library => library.Id == id);
     }
