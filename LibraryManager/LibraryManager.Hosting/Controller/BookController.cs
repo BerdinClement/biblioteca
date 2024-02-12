@@ -38,10 +38,10 @@ namespace LibraryManager.Hosting.Controller
             return _catalogService.GetBooksByType(type);
         }
 
-        [HttpGet("book/topRatedBook")]
+        [HttpGet("topRatedBook")]
         public IActionResult GetTopRatedBook()
         {
-            var topRatedBook = _catalogService.GetTopRatedBook();
+            var topRatedBook = _catalogService.GetBestRatedBook();
             if (topRatedBook == null)
             {
                 return NotFound();
