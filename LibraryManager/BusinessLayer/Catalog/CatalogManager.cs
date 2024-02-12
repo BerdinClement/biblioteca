@@ -49,7 +49,8 @@ public class CatalogManager : ICatalogManager
 
     public IEnumerable<Book> GetBooksByType(string type)
     {
-        return _bookRepository.GetAll().Where(book => book.Type == BookTypes.Fantasy);
+        return _bookRepository.GetAll()
+                              .OrderByDescending(book => book.Type);
     }
 
     public Book GetTopRatedBook()
