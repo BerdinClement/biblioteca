@@ -1,28 +1,24 @@
 ﻿using BusinessObjects.Entity;
+using DataAccessLayer.Contexts;
 using DataAccessLayer.Repository;
 
 
 public class AuthorRepository : IGenericRepository<Author>
 {
-    private List<Author> _authors ;
+    private readonly LibraryContext _libraryContext;
 
-    public AuthorRepository()
+    public AuthorRepository(LibraryContext libraryContext)
     {
-        _authors = new List<Author>();
-    }
-    
-    public AuthorRepository(List<Author> authors)
-    {
-        _authors = authors;
+        _libraryContext = libraryContext;
     }
 
     public IEnumerable<Author> GetAll()
     {
-        return _authors;
+        return _libraryContext.Authors.ToList();
     }
 
     public Author? Get(int id)
     {
-        return _authors.Find(author => author.Id == id);
+        return _libraryContext.Authors.ToList().Find(author => author.Id == id);
     }
 }
