@@ -1,6 +1,7 @@
 ﻿using BusinessObjects.Entity;
 using DataAccessLayer.Contexts;
 using DataAccessLayer.Repository;
+using Microsoft.EntityFrameworkCore;
 
 
 public class BookRepository : IGenericRepository<Book>
@@ -14,7 +15,7 @@ public class BookRepository : IGenericRepository<Book>
 
     public IEnumerable<Book> GetAll()
     {
-        return _libraryContext.Books.ToList();
+        return _libraryContext.Books.Include(x => x.Author).ToList();
     }
 
     public Book? Get(int id)

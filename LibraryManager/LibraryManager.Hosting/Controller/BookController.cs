@@ -1,7 +1,7 @@
-using BusinessLayer.Catalog;
 using BusinessObjects.Entity;
-using DataAccessLayer.Repository;
+using DataAccessLayer.Contexts;
 using Microsoft.AspNetCore.Mvc;
+using Services.Services;
 
 namespace LibraryManager.Hosting.Controller;
 
@@ -9,13 +9,15 @@ namespace LibraryManager.Hosting.Controller;
 [Route("[controller]")]
 public class BookController : ControllerBase
 {
-  private readonly LibraryManager _libraryManager = new LibraryManager();
-  private readonly IGenericRepository<Book> _bookRepository = new BookRepository(_libraryManager);
-  private readonly ICatalogManager _catalogManager = new CatalogManager(_bookRepository);
-  
+  private ICatalogService _catalogService;
+  public BookController(ICatalogService catalogService)
+  {
+    _catalogService = catalogService;
+  }
+  [HttpGet]
   public IEnumerable<Book> GetAll()
   {
-    
+    return _catalogService.ShowCatalog();
   }
   
 }
