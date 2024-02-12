@@ -1,6 +1,7 @@
-﻿using BusinessObjects.Entity;
+﻿using BusinessLayer.Catalog;
+using BusinessObjects.Entity;
+using Moq;
 using Services.Services;
-
 
 namespace Services.Tests
 {
@@ -14,6 +15,7 @@ namespace Services.Tests
             var mockCatalogManager = new Mock<ICatalogManager>();
             var expectedCatalog = new List<Book> { new Book(), new Book() };
             mockCatalogManager.Setup(m => m.DisplayCatalog()).Returns(expectedCatalog);
+
             var catalogService = new CatalogService(mockCatalogManager.Object);
 
 
