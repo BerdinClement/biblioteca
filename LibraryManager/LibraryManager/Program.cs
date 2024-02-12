@@ -18,7 +18,7 @@ internal class Program
 
         var catalogService = host.Services.GetRequiredService<ICatalogService>();
         
-        Console.WriteLine(catalogService.ShowCatalog());
+        Console.WriteLine(catalogService.ShowCatalog().First().Name);
     }
 
     private static IHost CreateHostBuilder(IConfigurationBuilder configuration)
@@ -34,7 +34,7 @@ internal class Program
                 services.AddScoped<IGenericRepository<Library>, LibraryRepository>();
                 
                 services.AddDbContext<LibraryContext>(options => 
-                    options.UseSqlite("Data Source=/Users/antoi/Documents/net/ressources/library.db;")
+                    options.UseSqlite("Data Source=/Users/clem/Developer/code/biblioteca/ressources/library.db;")
                 );
             })
             .Build();
