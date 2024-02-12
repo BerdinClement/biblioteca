@@ -1,5 +1,4 @@
 using BusinessObjects.Entity;
-using System.Linq;
 using DataAccessLayer.Repository;
 
 namespace BusinessLayer.Catalog;
@@ -27,7 +26,7 @@ public class CatalogManager : ICatalogManager
     {
         return _bookRepository.Get(id);
     }
-
+    
     public Book GetBestRatedBook()
     {
         return _bookRepository.GetAll().OrderByDescending(book => book.Rate).First();

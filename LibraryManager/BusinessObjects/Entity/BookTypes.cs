@@ -7,4 +7,5 @@ public enum BookTypes
     Histoire,
     Juridique,
     Fantasy,
+    Fiction,
 }
